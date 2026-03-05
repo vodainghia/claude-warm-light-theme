@@ -1,6 +1,6 @@
 # Claude Warm Light — VS Code Theme
 
-> A warm sepia-toned light theme inspired by Claude Code. Easy on the eyes for long coding sessions.
+> A warm sepia-toned light theme inspired by Claude Code. Easy on the eyes for long coding sessions. I'm not a dark-mode or light-mode guy anymore — I'm a Claude-mode guy.
 
 ![Version](https://img.shields.io/badge/version-0.2.0-b08a40)
 ![VS Code](https://img.shields.io/badge/VS%20Code-^1.80.0-007ACC)
