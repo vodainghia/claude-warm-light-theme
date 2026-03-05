@@ -35,32 +35,10 @@
 
 ## Installation
 
-### Option A — Install from VSIX (recommended)
+Search **"Claude Warm Light"** in the VS Code Extensions panel, or install via Command Palette:
 
-Download the latest `.vsix` from [Releases](https://github.com/vodainghia/claude-warm-light-theme/releases) and run:
-
-```bash
-code --install-extension claude-warm-light-0.2.0.vsix
 ```
-
-Or via Command Palette: `Cmd+Shift+P` → **"Extensions: Install from VSIX..."**
-
-### Option B — Copy to extensions folder
-
-```bash
-# macOS / Linux
-cp -r . ~/.vscode/extensions/claude-warm-light
-
-# Windows (PowerShell)
-Copy-Item -Recurse . "$env:USERPROFILE\.vscode\extensions\claude-warm-light"
-```
-
-### Option C — Build from source
-
-```bash
-npm install -g @vscode/vsce
-vsce package
-code --install-extension claude-warm-light-0.2.0.vsix
+ext install vodainghia.claude-warm-light
 ```
 
 After installing, activate the theme:
