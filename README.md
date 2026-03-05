@@ -120,22 +120,6 @@ Key picks:
 
 ---
 
-## Publishing to Marketplace
-
-```bash
-# 1. Login with your PAT from https://dev.azure.com
-vsce login vodainghia
-
-# 2. Publish
-vsce publish
-
-# 3. Bump version for next release
-vsce publish patch   # 0.2.0 → 0.2.1
-vsce publish minor   # 0.2.0 → 0.3.0
-```
-
----
-
 ## License
 
 [MIT](LICENSE) — © 2026 vodainghia
