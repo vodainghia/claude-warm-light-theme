@@ -122,4 +122,4 @@ Key picks:
 
 ## License
 
-[MIT](LICENSE) — © 2026 vodainghia
+[MIT](LICENSE) — © 2026 nghiavo
