@@ -5,6 +5,16 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
+## [0.2.1] — 2026-03-05
+
+### Changed
+- README: simplified Installation section — marketplace only
+- README: dynamic version badge (auto-syncs with Marketplace)
+- README: updated tagline description
+- `package.json`: corrected publisher and repository URLs to `vodainghia`
+
+---
+
 ## [0.2.0] — 2026-03-05
 
 ### Added
