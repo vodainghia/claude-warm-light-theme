@@ -3,7 +3,7 @@
   "displayName": "Claude Warm Light",
   "description": "A warm sepia-toned light theme inspired by Claude Code — easy on the eyes with subtle grid aesthetics",
   "version": "0.2.0",
-  "publisher": "vodainghia",
+  "publisher": "nghiavo",
   "license": "MIT",
   "engines": {
     "vscode": "^1.80.0"
