@@ -37,7 +37,7 @@
 
 ### Option A — Install from VSIX (recommended)
 
-Download the latest `.vsix` from [Releases](../../releases) and run:
+Download the latest `.vsix` from [Releases](https://github.com/vodainghia/claude-warm-light-theme/releases) and run:
 
 ```bash
 code --install-extension claude-warm-light-0.2.0.vsix
@@ -124,7 +124,7 @@ Key picks:
 
 ```bash
 # 1. Login with your PAT from https://dev.azure.com
-vsce login nghia-qe
+vsce login vodainghia
 
 # 2. Publish
 vsce publish
@@ -138,4 +138,4 @@ vsce publish minor   # 0.2.0 → 0.3.0
 
 ## License
 
-[MIT](LICENSE) — © 2026 nghia-qe
+[MIT](LICENSE) — © 2026 vodainghia
