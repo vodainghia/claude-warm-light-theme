@@ -1,0 +1,54 @@
+{
+  // ── Claude Warm Light — Recommended Settings ──────────
+  // Copy the settings you like into your own settings.json
+  // (Cmd+Shift+P > "Preferences: Open User Settings (JSON)")
+
+  // Theme
+  "workbench.colorTheme": "Claude Warm Light",
+
+  // Font — JetBrains Mono pairs well with this theme
+  "editor.fontFamily": "'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace",
+  "editor.fontSize": 14,
+  "editor.lineHeight": 22,
+  "editor.fontLigatures": true,
+
+  // Rulers — vertical grid lines at common widths
+  "editor.rulers": [80, 120],
+
+  // Indent guides — part of the grid feel
+  "editor.guides.indentation": true,
+  "editor.guides.bracketPairs": "active",
+  "editor.guides.highlightActiveIndentation": true,
+
+  // Bracket pair colorization
+  "editor.bracketPairColorization.enabled": true,
+  "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+
+  // Smooth scrolling
+  "editor.smoothScrolling": true,
+  "workbench.list.smoothScrolling": true,
+  "terminal.integrated.smoothScrolling": true,
+
+  // Cursor
+  "editor.cursorBlinking": "smooth",
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.cursorStyle": "line",
+
+  // Minimap
+  "editor.minimap.enabled": true,
+  "editor.minimap.renderCharacters": false,
+  "editor.minimap.maxColumn": 80,
+
+  // Terminal
+  "terminal.integrated.fontFamily": "'JetBrains Mono', monospace",
+  "terminal.integrated.fontSize": 13,
+  "terminal.integrated.lineHeight": 1.5,
+
+  // File icons — Catppuccin or Material icons work well with warm themes
+  // "workbench.iconTheme": "catppuccin-latte",
+
+  // Custom CSS (if using grid overlay)
+  // "vscode_custom_css.imports": [
+  //   "file:///Users/YOUR_NAME/.vscode/custom/claude-warm-grid.css"
+  // ]
+}

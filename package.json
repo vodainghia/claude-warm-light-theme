@@ -1,0 +1,45 @@
+{
+  "name": "claude-warm-light",
+  "displayName": "Claude Warm Light",
+  "description": "A warm sepia-toned light theme inspired by Claude Code — easy on the eyes with subtle grid aesthetics",
+  "version": "0.2.0",
+  "publisher": "nghia-qe",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "keywords": [
+    "theme",
+    "light",
+    "warm",
+    "sepia",
+    "claude",
+    "eye-friendly",
+    "grid"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Claude Warm Light",
+        "uiTheme": "vs",
+        "path": "./themes/claude-warm-light-color-theme.json"
+      }
+    ]
+  },
+  "icon": "icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nghia-qe/claude-warm-light"
+  },
+  "bugs": {
+    "url": "https://github.com/nghia-qe/claude-warm-light/issues"
+  },
+  "homepage": "https://github.com/nghia-qe/claude-warm-light#readme",
+  "galleryBanner": {
+    "color": "#faf6f0",
+    "theme": "light"
+  }
+}

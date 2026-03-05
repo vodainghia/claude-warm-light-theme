@@ -1,0 +1,10 @@
+# Files NOT included in the VSIX package
+.vscodeignore
+.gitignore
+.git
+*.vsix
+*.backup
+
+# Extras are for GitHub only, not bundled
+extras/
+

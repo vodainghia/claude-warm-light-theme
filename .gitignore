@@ -1,0 +1,16 @@
+# Build output
+*.vsix
+
+# Node
+node_modules/
+npm-debug.log*
+
+# macOS
+.DS_Store
+
+# VS Code
+.vscode/*
+!.vscode/extensions.json
+
+# vsce
+.vscode-test/
