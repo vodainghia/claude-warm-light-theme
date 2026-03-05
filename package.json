@@ -2,7 +2,7 @@
   "name": "claude-warm-light",
   "displayName": "Claude Warm Light",
   "description": "A warm sepia-toned light theme inspired by Claude Code — easy on the eyes with subtle grid aesthetics",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "publisher": "nghiavo",
   "license": "MIT",
   "engines": {
