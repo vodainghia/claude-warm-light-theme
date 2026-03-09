@@ -1,9 +1,13 @@
 #!/bin/bash
 # ─────────────────────────────────────────────────────────
-# Claude Warm Light — Grid Overlay Setup  v0.2
+# Claude Warm Light — Grid Overlay Setup  v0.3
 # ─────────────────────────────────────────────────────────
-# Copies the grid CSS to a permanent location and prints
+# Installs the grid CSS to a permanent location and prints
 # the exact settings.json snippet you need to add.
+#
+# Usage:
+#   From repo:   bash extras/grid/setup-grid.sh
+#   One-liner:   curl -fsSL https://raw.githubusercontent.com/vodainghia/claude-warm-light-theme/main/extras/grid/setup-grid.sh | bash
 #
 # Prerequisites:
 #   Install "Custom CSS and JS Loader" (be5invis.vscode-custom-css)
@@ -14,18 +18,25 @@ set -e
 
 CSS_DIR="$HOME/.vscode/custom"
 CSS_FILE="$CSS_DIR/claude-warm-grid.css"
-SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd 2>/dev/null || echo "")"
 SOURCE_CSS="$SCRIPT_DIR/claude-warm-grid.css"
+CSS_URL="https://raw.githubusercontent.com/vodainghia/claude-warm-light-theme/main/extras/grid/claude-warm-grid.css"
 
 echo "╔══════════════════════════════════════════════╗"
-echo "║  Claude Warm Light — Grid Overlay Setup v0.2 ║"
+echo "║  Claude Warm Light — Grid Overlay Setup v0.3 ║"
 echo "╚══════════════════════════════════════════════╝"
 echo ""
 
-# ── Step 1: Copy CSS ──────────────────────────────────────
+# ── Step 1: Install CSS ───────────────────────────────────
 mkdir -p "$CSS_DIR"
-cp "$SOURCE_CSS" "$CSS_FILE"
-echo "✓  Copied grid CSS to: $CSS_FILE"
+if [[ -f "$SOURCE_CSS" ]]; then
+  cp "$SOURCE_CSS" "$CSS_FILE"
+  echo "✓  Copied grid CSS to: $CSS_FILE"
+else
+  echo "Downloading grid CSS from GitHub..."
+  curl -fsSL "$CSS_URL" -o "$CSS_FILE"
+  echo "✓  Downloaded grid CSS to: $CSS_FILE"
+fi
 
 # ── Step 2: Build platform-correct file URI ───────────────
 if [[ "$OSTYPE" == "darwin"* ]] || [[ "$OSTYPE" == "linux-gnu"* ]]; then
@@ -108,10 +119,5 @@ echo "  4. Dismiss 'corrupt installation' warning (expected & safe)"
 echo ""
 echo "── To disable grid later ───────────────────────────"
 echo "  Cmd+Shift+P → 'Disable Custom CSS and JS'"
-echo ""
-echo "── To tune the grid ────────────────────────────────"
-echo "  Edit :root variables at the top of: $CSS_FILE"
-echo "    --grid-h-size  (default 22px — match editor.lineHeight)"
-echo "    --grid-v-size  (default 64px — ~8 chars wide)"
 echo ""
 echo "Done! Enjoy your grid ✨"

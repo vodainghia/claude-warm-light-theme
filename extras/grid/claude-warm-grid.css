@@ -1,144 +1,68 @@
 /*
- * Claude Warm Light — Grid Overlay  v0.2
- * ─────────────────────────────────────────────────────────
- * Adds subtle ruled-paper grid lines to the editor and terminal.
- *
- * INSTALL:
- *   1. Install "Custom CSS and JS Loader" in VS Code:
- *      Marketplace ID: be5invis.vscode-custom-css
- *   2. Run setup-grid.sh  — or manually add the file URI to settings.json:
- *        "vscode_custom_css.imports": ["file:///path/to/claude-warm-grid.css"]
- *   3. Command Palette → "Enable Custom CSS and JS" → Restart
- *
- * TUNE (edit :root variables below):
- *   --grid-h-size  : must match your editor.lineHeight (default 22px)
- *   --grid-v-size  : ~8 × your font character width   (default 64px)
- *   --grid-color   : RGB of the grid line color
- *
- * VS Code compatibility: 1.80 → 1.99+
+ * Claude Warm Light — Grid Overlay v2
+ * ────────────────────────────────────
+ * Square grid pattern inspired by Claude Code's background.
+ * Grid cells are equal-sized squares (20x20px).
+ * Very subtle — visible when you look for it, invisible when reading code.
  */
 
-/* ── TUNE THESE TO MATCH YOUR SETTINGS ───────────────── */
-:root {
-  --grid-h-size:  22px;            /* editor.lineHeight        */
-  --grid-v-size:  64px;            /* ~8 chars wide            */
-  --grid-color:   160, 145, 120;   /* warm sepia RGB triplet   */
-}
-
-
-/* ═══════════════════════════════════════════════════════
-   EDITOR AREA
-   ═══════════════════════════════════════════════════════ */
-
-/* ── HORIZONTAL RULES — ruled-paper rows ─────────────── */
+/* ── SQUARE GRID — editor area ───────────────────────── */
+/* Single unified grid: 20x20px squares, very faint        */
 .monaco-editor .view-lines {
-  background-image: linear-gradient(
-    to bottom,
-    rgba(var(--grid-color), 0.08) 0px,
-    rgba(var(--grid-color), 0.08) 1px,
-    transparent 1px,
-    transparent 100%
-  );
-  background-size: 100% var(--grid-h-size);
-  background-attachment: local;
-}
-
-/* ── VERTICAL COLUMNS — subtle ~8ch rhythm ───────────── */
-.monaco-editor .lines-content {
-  background-image: repeating-linear-gradient(
-    90deg,
-    transparent 0px,
-    transparent calc(var(--grid-v-size) - 1px),
-    rgba(var(--grid-color), 0.05) calc(var(--grid-v-size) - 1px),
-    rgba(var(--grid-color), 0.05) var(--grid-v-size)
-  );
-  background-attachment: local;
-}
-
-/* ── ACTIVE LINE — warm left-border accent ───────────── */
-.monaco-editor .current-line {
-  border: none !important;
-  box-shadow: inset 3px 0 0 0 rgba(176, 138, 64, 0.30) !important;
-}
-
-/* ── GUTTER SEPARATOR ────────────────────────────────── */
-.monaco-editor .margin {
-  border-right: 1px solid rgba(var(--grid-color), 0.18) !important;
-}
-
-
-/* ═══════════════════════════════════════════════════════
-   TERMINAL AREA
-   (supports VS Code 1.80–1.99+; both selector generations)
-   ═══════════════════════════════════════════════════════ */
-
-/* VS Code 1.90+ — direct .xterm child selector */
-.xterm .xterm-screen {
   background-image:
     linear-gradient(
       to bottom,
-      rgba(var(--grid-color), 0.06) 0px,
-      rgba(var(--grid-color), 0.06) 1px,
-      transparent 1px,
-      transparent 100%
+      rgba(160, 145, 120, 0.06) 0px,
+      rgba(160, 145, 120, 0.06) 1px,
+      transparent 1px
     ),
     linear-gradient(
       to right,
-      rgba(var(--grid-color), 0.03) 0px,
-      rgba(var(--grid-color), 0.03) 1px,
-      transparent 1px,
-      transparent 100%
+      rgba(160, 145, 120, 0.06) 0px,
+      rgba(160, 145, 120, 0.06) 1px,
+      transparent 1px
     );
-  background-size: var(--grid-v-size) var(--grid-h-size);
+  background-size: 20px 20px;
+  background-attachment: local;
 }
 
-/* VS Code 1.80–1.89 — wrapper-scoped selectors (fallback) */
+/* Remove the separate vertical lines from lines-content   */
+/* so we don't get double vertical lines                   */
+.monaco-editor .lines-content {
+  background-image: none !important;
+}
+
+/* ── SQUARE GRID — terminal ──────────────────────────── */
 .terminal-wrapper .xterm-screen,
 .terminal .xterm-screen {
   background-image:
     linear-gradient(
       to bottom,
-      rgba(var(--grid-color), 0.06) 0px,
-      rgba(var(--grid-color), 0.06) 1px,
-      transparent 1px,
-      transparent 100%
+      rgba(160, 145, 120, 0.05) 0px,
+      rgba(160, 145, 120, 0.05) 1px,
+      transparent 1px
     ),
     linear-gradient(
       to right,
-      rgba(var(--grid-color), 0.03) 0px,
-      rgba(var(--grid-color), 0.03) 1px,
-      transparent 1px,
-      transparent 100%
+      rgba(160, 145, 120, 0.05) 0px,
+      rgba(160, 145, 120, 0.05) 1px,
+      transparent 1px
     );
-  background-size: var(--grid-v-size) var(--grid-h-size);
+  background-size: 20px 20px;
 }
 
-
-/* ═══════════════════════════════════════════════════════
-   CHROME / LAYOUT
-   ═══════════════════════════════════════════════════════ */
-
-/* ── ACTIVITY BAR — subtle right edge ────────────────── */
-.activitybar {
-  border-right: 1px solid rgba(var(--grid-color), 0.20) !important;
+/* ── ACTIVE LINE — warm left-border accent ───────────── */
+.monaco-editor .current-line {
+  border: none !important;
+  box-shadow: inset 3px 0 0 0 rgba(176, 138, 64, 0.25) !important;
 }
 
-/* ── PANEL — top edge separator ─────────────────────── */
-.part.panel {
-  border-top: 1px solid rgba(var(--grid-color), 0.25) !important;
+/* ── GUTTER SEPARATOR ────────────────────────────────── */
+.monaco-editor .margin {
+  border-right: 1px solid rgba(160, 145, 120, 0.15) !important;
 }
 
-/* ── TABS BOTTOM BORDER ──────────────────────────────── */
-.tabs-container {
-  border-bottom: 1px solid rgba(var(--grid-color), 0.15) !important;
-}
-
-/* ── MINIMAP — softer opacity ────────────────────────── */
+/* ── MINIMAP — softer ────────────────────────────────── */
 .minimap-decorations-layer {
   opacity: 0.55;
-}
-
-/* ── SCROLLBAR — minimal warm style ──────────────────── */
-.monaco-editor .decorationsOverviewRuler {
-  opacity: 0.45;
 }

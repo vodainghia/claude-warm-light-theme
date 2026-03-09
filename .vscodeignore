@@ -4,6 +4,13 @@
 .git
 *.vsix
 *.backup
+package-lock.json
+.claude/
+jetbrains/
+
+# Demo/preview files for GitHub only
+preview-sample.ts
+preview.png
 
 # Extras are for GitHub only, not bundled
 extras/

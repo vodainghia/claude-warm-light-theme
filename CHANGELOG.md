@@ -5,6 +5,17 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
+## [0.2.5] — 2026-03-09
+
+### Changed
+- **Grid CSS v2** (`extras/grid/claude-warm-grid.css`): replaced ruled-paper layout with a uniform 20×20px square grid; removed `:root` variables; simplified selectors
+- `setup-grid.sh` v0.3: auto-downloads CSS from GitHub if running via one-liner (`curl … | bash`) — no need to clone the repo
+- README: Quick setup is now a single `curl | bash` command
+- README: `extras/` links changed to absolute GitHub URLs (fix broken links on VS Code Marketplace)
+- README: added preview screenshot
+
+---
+
 ## [0.2.4] — 2026-03-05
 
 ### Changed
@@ -25,7 +36,7 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Changed
 - **CSS Grid v0.2** (`extras/grid/claude-warm-grid.css`):
-  - Introduced `:root` CSS variables (`--grid-h-size`, `--grid-v-size`, `--grid-color`) for easy tuning
+  - Introduced `:root` CSS variables for easy tuning
   - Added VS Code 1.90+ terminal selector `.xterm .xterm-screen` (old selectors kept as fallback)
   - Added Activity Bar right-edge separator
   - Improved `setup-grid.sh`: auto-detect `settings.json` path, optional auto-patch with backup
